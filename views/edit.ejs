@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Add new product</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <form action="/update/<%= product._id %>" method="POST" enctype="multipart/form-data">
+        <input type="text" name="name" placeholder="Name" value="<%= product.name %>">
+        <br><br>
+        <input type="text" name="desc" placeholder="Desc" value="<%= product.desc %>">
+        <br><br>
+        <input type="text" name="video" placeholder="Video" value="<%= product.video %>">
+        <br><br>
+        <p>Image Old:
+            <%= product.image %>
+        </p>
+        <input type="hidden" name="oldImage" value="<%= product.image %>">
+        <input type="file" name="image">
+        <br><br>
+        <button>Update product</button>
+    </form>
+</body>
+
+</html>

@@ -1,0 +1,24 @@
+//
+const express = requier('express')
+
+const app = express();
+app.set('view engine', 'ejs');
+app.set('views', './views')
+app.use(express.static('public'))
+
+//
+npm init -y 
+npm add express mongodb ejs mongoose  body-parser
+npm install --save multer (neu can upload)
+
+sau buoi 15 thi khi xoa hình ảnh sẽ vẫn còn ảnh trong public ta 
+sẽ xóa luôn bằng cách sử dụng thư viện có sẵn
+const fs=  require('fs')
+sau đó sử dụng fs.unlink
+và khi dùng hàm remove thì nó sẽ lưu các thuộc tính của đối tượng bị xóa
+
+
+
+ // co file moi thi phai xoa phai cu
+         //kiểm tra điều kiện nếu sai exit luôn , nếu không sẽ tiếp tục thực hiện
+         // đỡ phải thêm 1 if nữa => bớt đc 1 dòng

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add new Product</title>
+</head>
+
+<body>
+
+    <!--Thuộc tính enctype chỉ định cách mã hóa dữ liệu biểu mẫu khi gửi nó đến máy chủ. -->
+    <!--   chỉ được sử dngj nếu method= 'post' -->
+    <!-- multipart/form-data : Không có ký tự nào được mã hóa. Giá trị này bắt buộc khi bạn đang sử dụng biểu mẫu có kiểm soát tải tệp lên -->
+    <form action="/add" method="POST" enctype="multipart/form-data">
+        <p>
+            <input type="text" name="name" placeholder="name">
+        </p>
+        <p>
+            <input type="text" name="desc" placeholder="desc">
+        </p>
+        <p>
+            <input type="text" name="video" placeholder="video">
+        </p>
+        <p>
+            <input type="file" name="image">
+        </p>
+        <br><br>
+        <button> add video</button>
+    </form>
+</body>
+
+</html>

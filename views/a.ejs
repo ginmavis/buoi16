@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>This Way Site Template - Dark Skin</title>
+    <meta name="fragment" content="!">
+    <meta name='robots' content='index,follow' />
+    <link rel='stylesheet' id='generalStyle-css' href='style_dark.css' type='text/css' media='all' />
+    <link rel='stylesheet' id='contentFont-css' href='http://fonts.googleapis.com/css?family=PT+Sans:regular&amp;subset=cyrillic,latin' type='text/css' media='all' />
+    <link id='headerFont-css' href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+    <link rel='stylesheet' id='modal-css' href='js/prettyPhoto/css/prettyPhoto.css' type='text/css' media='all' />
+    <script type='text/javascript' src='js/jquery-1.7.min.js'></script>
+    <script type='text/javascript' src='js/jquery.easing.1.3.js'></script>
+    <script type='text/javascript' src='js/prettyPhoto/js/jquery.prettyPhoto.js'></script>
+    <script type='text/javascript' src='js/jquery.quicksand.js'></script>
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=true"></script>
+    <script type="text/javascript" src="js/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="js/jquery.history.js"></script>
+    <script type='text/javascript' src="main.js"></script>
+    <link rel="shortcut icon" type="image/x-icon" href="images/favicon_dark.ico">
+    <script type='text/javascript'>
+        var bgTime = 5000; // bg Image/Video animation display duration
+        var bgPaused = false; // bg Image/Video animation paused
+        var menuTime = 600; // menu delay
+        var autoPlay = false; // Background audio autoplay
+        var loop = true; // Background audio loop or next song
+        var twtTime = 3000; // Twitter display duration
+        var prettyTheme = 'dark_square'; //Pretty Photo Plug-in Teheme
+
+        var normalFade = true; // Normal fade animation
+        var frontPage = ''; // Front Page URL
+        var btnSoundURL = 'http://files.renklibeyaz.com/sounds/button2'; // Button Hover Sound
+        var menuPositionFixed = false;
+
+        //v1.2
+        var videoPaused = false;
+        var menuAlwaysOpen = false;
+        var bgStretch = true;
+    </script>
+    <script type='text/javascript' src="http://f.vimeocdn.com/js/froogaloop2.min.js"></script>
+</head>
+
+<body>
+    <div id="body-wrapper">
+        <!-- BEGIN: Main Elements; Please don't change these items -->
+        <div id="bgImage">
+            <div id="bgImageWrapper"></div>
+        </div>
+        <div id="bgPattern"></div>
+        <div id="bgText">
+            <h3></h3>
+            <div class="subText"></div>
+        </div>
+        <div id="content">
+            <div id="contentBox"></div>
+            <div id="contentLoading">
+                <div id="CtLoading">
+                    Loading<br/>
+                    <img src="images/loading1.gif" width="80" height="10" alt="" />
+                </div>
+            </div>
+        </div>
+        <!-- END: Main Elements -->
+        <!-- BEGIN: Vertical Side Bar -->
+        <!--
+		// Every <li> includes Thumbnail, Video or Background Image
+		Caption and Description elementes
+	-->
+        <ul id="bgImages">
+            <% products.forEach(product => { %>
+                <li>
+                    <img class="thumb" src="./<%= product.image %>" alt="" width="300px" height="300px">
+                    <iframe src="http://player.vimeo.com/video/<%= product.video %>?api=1&amp;title=0&amp;byline=0&amp;portrait=0&amp;color=7d7d7d" videotype="vimeo" width="400" height="225" frameborder="0" webkitAllowFullScreen allowFullScreen></iframe>
+                    <h3>
+                        <%= product.name %>
+                    </h3>
+                    <p>
+                        <%= product.desc %>
+                    </p>
+                </li>
+                <% }); %>
+        </ul>
+        <!-- BEGIN: Main Menu -->
+        <div id="menu-container">
+            <!-- BEGIN: Logo -->
+            <div id="logo">
+                <img src="images/logo.png" title="This Way FullScreen" />
+            </div>
+            <!-- END: Logo -->
+            <!--
+			// Menu classes must be used with the same hierarchy and the same class names
+		-->
+            <div id="mainmenu">
+                <div class="menu-header">
+                    <ul id="menu-main-menu" class="menu">
+                        <li id="menu-item-1">
+                            <a href="/"><span class="title">HOME</span></a>
+                        </li>
+                        <li id="menu-item-2">
+                            <a href="#!#"><span class="title">ABOUT</span></a>
+
+                            <!-- When using submenu ul tag must include class="sub-menu" -->
+                            <ul class="sub-menu">
+                                <li id="menu-item-21"><a href="#!about.html"><span class="title">COMPANY</span></a></li>
+                                <li id="menu-item-22"><a href="#!columns.html"><span class="title">4 COLUMNS</span></a></li>
+                                <li id="menu-item-23"><a href="#!typography.html"><span class="title">TYPOGRAPHY</span></a></li>
+                                <li id="menu-item-24"><a href="#!quotes.html"><span class="title">QUOTES</span></a></li>
+                                <li id="menu-item-25"><a href="#!other.html"><span class="title">OTHERS</span></a></li>
+                            </ul>
+                        </li>
+                        <li id="menu-item-3">
+                            <a href="#!blog.html"><span class="title">BLOG</span></a>
+                        </li>
+                        <li id="menu-item-4">
+                            <a href="http://www.themeforest.net" target="_blank"><span class="title">LINK</span></a>
+                        </li>
+                        <li id="menu-item-5">
+                            <a href="#!#"><span class="title">PORTFOLIO</span></a>
+                            <ul class="sub-menu">
+                                <li id="menu-item-51"><a href="#!portfolio.html"><span class="title">TWO COLUMNS</span></a></li>
+                                <li id="menu-item-52"><a href="#!portfolio4.html"><span class="title">FOUR COLUMNS FILTER</span></a></li>
+                                <li id="menu-item-53"><a href="#!portfolioVideo.html"><span class="title">VIDEO PORTFOLIO</span></a></li>
+                            </ul>
+                        </li>
+                        <li id="menu-item-6"><a href="#!contact.html"><span class="title">CONTACT</span></a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- BEGIN: Menu Opener; Please dont remove this element to use menu. -->
+            <div id="menuOpener">MENU</div>
+            <div id="menuCloser">CLOSE</div>
+            <!-- END: Menu Opener -->
+        </div>
+        <!-- END: Main Menu -->
+        <!-- BEGIN: Twitter -->
+        <div id="twt">
+            <a class="twButton" href="javascript:void(0);"></a>
+            <div class="twContent">
+                <h3>TWITTER</h3>
+                <ul>
+                    <!-- BEGIN: Tweet -->
+                    <li>Integer est erat, mattis ac semper sed, ultricies egestas orci. Ut pharetra venenatis odio et lobortis. @Suspendisse
+                        <span>2 hours ago</span></li>
+                    <!-- END: Tweet -->
+                    <li>Aenean dictum tincidunt neque, id dictum eros feugiat nec. Pellentesque tortor. @Sapien
+                        <span>3 hours ago</span></li>
+                    <li>Morbi suscipit eros in elit eleifend tempor. Curabitur non lacus lectus, et ullamcorper. @massa
+                        <span>4 hours ago</span></li>
+                    <li>Etiam id nisi eu ante tempor viverra. Nam ut justo quis sapien ullamcorper. @dapibus
+                        <span>5 hours ago</span></li>
+                </ul>
+            </div>
+        </div>
+        <!-- END: Twitter -->
+        <!-- BEGIN: Audio Controller; Please don't remove this element	-->
+        <div id="audioControls">
+            <a class="btn prev" href="javascript:void(0);"></a>
+            <a class="btn play" href="javascript:void(0);"></a>
+            <a class="btn pause" href="javascript:void(0);"></a>
+            <a class="btn next" href="javascript:void(0);"></a>
+        </div>
+        <!-- END: Audio Controller -->
+        <!-- BEGIN: Footer -->
+        <div id="footer">
+            <div id="footertext"> Copyright &copy; 2013 | ThisWay Site Template</div>
+            <!-- BEGIN: Background Controller Buttons -->
+            <div id="bgControl">
+                <a class="prev" href="javascript:void(0);" onclick="prevBg()"></a>
+                <a class="play" href="javascript:void(0);" onclick="playBg()"></a>
+                <a class="pause" href="javascript:void(0);" onclick="pauseBg()"></a>
+                <a class="next" href="javascript:void(0);" onclick="nextBg()"></a>
+            </div>
+            <!-- END: Background Controller Buttons -->
+            <!-- BEGIN: Share Buttons -->
+            <div id="share">
+                <ul>
+                    <li>
+                        <a class="tip fb" href="http://www.facebook.com/sharer.php?u=http://www.renklibeyaz.com/true" tip-text="Facebook"></a>
+                    </li>
+                    <li>
+                        <a class="tip tw" href="http://twitter.com/home?status=Check out this Awesome Site - http://www.renklibeyaz.com/true" tip-text="Twitter"></a>
+                    </li>
+                    <li>
+                        <a class="tip in" href="http://www.linkedin.com/shareArticle?mini=true&url=http://www.renklibeyaz.com/true&title=&summary=&source=" tip-text="LinkedIn"></a>
+                    </li>
+                    <li>
+                        <a class="tip deli" href="http://del.icio.us/post?url=http://www.renklibeyaz.com/true" tip-text="delicious"></a>
+                    </li>
+                    <li>
+                        <a class="tip st" href="http://www.stumbleupon.com/submit?url=http://www.renklibeyaz.com/true" tip-text="StumbleUpon"></a>
+                    </li>
+                    <li>
+                        <a class="tip rss" href="http://www.renklibeyaz.com/true?feed=rss" tip-text="RSS"></a>
+                    </li>
+                </ul>
+            </div>
+            <!-- END: Share Buttons -->
+        </div>
+        <!-- END: Footer -->
+        <!-- BEGIN: Audio List
+		// Every li includes a song url. But it doesn't contain file extensions.
+		Because some off browsers support .mp3 and others support .ogg format. It automatically recognise it.
+		For the wider browser support you should put filename.mp3, filename.ogg formats to the folder.
+	-->
+        <ul id="audioList">
+            <li>http://files.renklibeyaz.com/sounds/Brandz-Angeldust</li>
+            <li>http://files.renklibeyaz.com/sounds/Brandz-Nexus</li>
+            <li>http://files.renklibeyaz.com/sounds/Brandz-Pleasure</li>
+            <li>http://files.renklibeyaz.com/sounds/Brandz-SubstratumPad02</li>
+            <li>http://files.renklibeyaz.com/sounds/Brandz-Vanish</li>
+        </ul>
+        <!-- END: Audio List -->
+    </div>
+    <!-- BEGIN: First Loading; Please don't remove this element -->
+    <div id="bodyLoading">
+        <div id="loading">
+            Loading<br/>
+            <img src="images/loading1.gif" width="80" height="" alt="loading" />
+        </div>
+    </div>
+    <!-- END: First Loading -->
+    </div>
+</body>
+
+</html>

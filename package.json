@@ -1,0 +1,29 @@
+{
+  "name": "buoi16",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ginmavis/buoi16.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ginmavis/buoi16/issues"
+  },
+  "homepage": "https://github.com/ginmavis/buoi16#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "ejs": "^3.0.1",
+    "express": "^4.17.1",
+    "mongodb": "^3.5.5",
+    "mongoose": "^5.9.4",
+    "multer": "^1.4.2"
+  }
+}
